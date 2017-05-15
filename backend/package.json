@@ -1,0 +1,16 @@
+{
+  "name"         : "DistanceAPI",
+  "version"      : "0.0.1",
+  "description"  : "",
+  "main"         : "server.js",
+  "author"       : "Ben",
+  "repository"   : {
+    "type" : "git",
+    "url"  : ""
+  },
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "mathjs"    : "latest"
+  }
+}

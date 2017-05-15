@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="compie">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Compie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDBFmXSwUIqan2fL1U3J1sQFTgCG4LYGJs&sensor=false&libraries=places"></script>
+    <script src="http://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl" class="text-center">
+    
+    <h1 class="text-center">Get Near Branches</h1>
+
+    <h3 class="text-center">Enter a location:</h3>
+    <div style="display: inline-flex;">
+    	<input class="form-control" type="text" gm-places-autocomplete ng-model="autocomplete" style="min-width: 400px"/>
+    	<button ng-click="onSubmit();" ng-if="lat" class="btn btn-success">Submit</button>
+    </div>
+
+    <table class="table table-condensed" style="width: 500px; margin: auto; margin-top: 100px;">
+    <thead ng-if="data">
+      <tr>
+      	<th class="text-center">Network</th>
+        <th class="text-center">Branch</th>
+        <th class="text-center">Distance (km)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in data">
+      	<td>{{item.network}}</td>
+        <td>{{item.branch}}</td>
+        <td>{{item.distance}}</td>
+      </tr>
+    </tbody>
+  </table>	
+  </body>
+
+</html>
